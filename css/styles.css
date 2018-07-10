@@ -6,7 +6,7 @@ td,
 th,
 p {
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10pt;
+	font-size: 12pt;
 	color: #333;
 	line-height: 1.5;
 }
@@ -71,7 +71,7 @@ section {
 
 #footer {
 	background-color: #444;
-	color: #aaa;
+	color: #fff;
 	font-size: 8pt;
 	letter-spacing: 1px;
 	padding: 25px;
@@ -157,7 +157,7 @@ nav h1 a {
 	padding: 20px 0px 20px 0px;
 }
 
-.filter-results h2 {
+.filter-results h3 {
 	color: white;
 	font-size: 1rem;
 	font-weight: normal;
@@ -221,7 +221,7 @@ nav h1 a {
 	box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
 }
 
-#restaurants-list li h1 {
+#restaurants-list li h2 {
 	color: #f18200;
 	font-family: Arial, sans-serif;
 	font-size: 14pt;
@@ -235,10 +235,10 @@ nav h1 a {
 
 #restaurants-list p {
 	margin: 0;
-	font-size: 11pt;
+	font-size: 14pt;
 }
 
-#restaurants-list li a {
+#restaurants-list li button {
 	background-color: orange;
 	border-bottom: 3px solid #eee;
 	color: #fff;
@@ -249,6 +249,7 @@ nav h1 a {
 	text-align: center;
 	text-decoration: none;
 	text-transform: uppercase;
+	cursor: pointer;
 }
 
 /* ====================== Restaurant Details ====================== */

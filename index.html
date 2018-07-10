@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 	<link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
@@ -19,20 +19,19 @@
 
 	<main id="maincontent">
 		<section id="map-container">
-			<div id="map"></div>
+			<div role="map" id="map"></div>
 		</section>
 		<section>
-			
 			<div class="filter-results">
-				<h2>Filter Results</h2>
+				<h3>Filter Results</h3>
 				<div class="filter-options">
-				<select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-				  <option value="all">All Neighborhoods</option>
-				</select>
-				<select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
-				  <option value="all">All Cuisines</option>
-				</select>
-					</div>
+					<select aria-label="Select neighborhoods" role="listbox" id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
+					  <option role="option" value="all">All Neighborhoods</option>
+					</select>
+					<select aria-label="Select cuisines" role="listbox" id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
+					  <option role="option" aria-selected="true" value="all">All Cuisines</option>
+					</select>
+				</div>
 			</div>
 			<ul id="restaurants-list"></ul>
 		</section>
