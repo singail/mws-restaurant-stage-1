@@ -178,12 +178,12 @@ createRestaurantHTML = (restaurant) => {
 
 	const more = document.createElement('button');
 	more.innerHTML = 'View Details';
-	more.onclick = function() {
+	more.onclick = function () {
 		const url = DBHelper.urlForRestaurant(restaurant);
 		window.location = url;
 	}
-		
-		
+
+
 	li.append(more)
 
 	return li
