@@ -109,11 +109,10 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
 	const hours = document.getElementById('restaurant-hours');
 	for (let key in operatingHours) {
 		const row = document.createElement('tr');
-
 		const day = document.createElement('td');
 		day.innerHTML = key;
 		row.appendChild(day);
-
+		row.tabIndex = '0';
 		const time = document.createElement('td');
 		time.innerHTML = operatingHours[key];
 		row.appendChild(time);
@@ -127,7 +126,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 	const container = document.getElementById('reviews-container');
-	const title = document.createElement('h2');
+	const title = document.createElement('h3');
 	title.innerHTML = 'Reviews';
 	container.appendChild(title);
 
@@ -151,18 +150,18 @@ createReviewHTML = (review) => {
 	const li = document.createElement('li');
 	const name = document.createElement('p');
 	name.innerHTML = review.name;
-	name.style.fontWeight = 'bold';
+	name.classList.add('review-info');
+	name.tabIndex = '0';
 	li.appendChild(name);
 
 	const date = document.createElement('p');
 	date.innerHTML = review.date;
-	date.style.fontWeight = 'bold';
+	date.classList.add('review-info');
 	li.appendChild(date);
 
 	const rating = document.createElement('p');
 	rating.innerHTML = `Rating: ${review.rating}`;
-	rating.style.fontWeight = 'bold';
-	rating.style.color = '#f58500';
+	rating.classList.add('rating');
 	li.appendChild(rating);
 
 	const comments = document.createElement('p');
