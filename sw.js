@@ -1,3 +1,4 @@
+//Name of cache and files I want to cache
 var cacheName = 'v3';
 var cachedFiles = [
 	'/',
@@ -20,21 +21,20 @@ var cachedFiles = [
 	'/js/restaurant_info.js'
 ];
 
-self.addEventListener('install', function(event) {
-	
+//cache all files
+self.addEventListener('install', function (event) {
 	event.waitUntil(
-		
-	caches.open(cacheName).then(function(cache) {
-		return cache.addAll(cachedFiles);
-	})
+		caches.open(cacheName).then(function (cache) {
+			return cache.addAll(cachedFiles);
+		})
 	);
 });
 
-self.addEventListener('activate', function(event) {
-	
+//delete old cache
+self.addEventListener('activate', function (event) {
 	event.waitUntil(
-		caches.keys().then(function(cacheNames) {
-			return Promise.all(cacheNames.map(function(thisCacheName){
+		caches.keys().then(function (cacheNames) {
+			return Promise.all(cacheNames.map(function (thisCacheName) {
 				if (thisCacheName !== cacheName) {
 					return caches.delete(thisCacheName);
 				}
@@ -43,10 +43,11 @@ self.addEventListener('activate', function(event) {
 	);
 });
 
-self.addEventListener('fetch', function(event) {
+//return cached files
+self.addEventListener('fetch', function (event) {
 	event.respondWith(
-	caches.match(event.request).then(function(response) {
-		return response || fetch(event.request);
-	})
+		caches.match(event.request).then(function (response) {
+			return response || fetch(event.request);
+		})
 	);
 });
